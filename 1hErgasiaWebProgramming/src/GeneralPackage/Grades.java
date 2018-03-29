@@ -6,7 +6,7 @@ import java.util.List;
 public class Grades {
 
 	
-	public List<Courses> courseList;
+	public  static List<Courses> courseList;
 	public List<Integer> gradeList;
 	private int cid;
 	private int grade;
@@ -15,27 +15,28 @@ public class Grades {
 	public Grades() {
 		courseList = new ArrayList<>();
 		gradeList = new ArrayList<>();
-	}
-	
-	public void setIndex() {
 		index+=1;
 	}
 	
-	public void addCourse(Courses c1) {
-			courseList.add(c1);
+	//public void setIndex() {
+	//	index+=1;
+	//}
+	
+	public void addCourse(Courses course) {
+			courseList.add(course);
 			gradeList.add(0);
 	}
 	
 	public void showLists() {
-		for (int i=0; i< courseList.size(); i++) {
+		for (int i=0; i< courseList.size() ; i++) {
 			Courses c=courseList.get(i);
 			//System.out.println(courseList.size());
-			System.out.println(c.getCourse_name());
-			System.out.println(gradeList.get(i));
+			System.out.println(c.getCourse_name() + "\t" + gradeList.get(i));
+			//System.out.println(gradeList.get(i));
 		} 
 		
 		if (courseList.size()<1) {
-			System.out.println("no courses");
+			System.out.println("no courses \n");
 		}
 	}
 	
@@ -43,4 +44,13 @@ public class Grades {
 		//courseList.add(cid);
 		gradeList.add(grade);
 	}
+
+	/**
+	 * @return the index
+	 */
+	public static int getIndex() {
+		return index;
+	}
+
+
 }

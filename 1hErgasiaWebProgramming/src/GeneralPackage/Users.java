@@ -1,5 +1,7 @@
 package GeneralPackage;
 
+import java.util.Scanner;
+
 public class Users {
 	
 	private String username;
@@ -12,21 +14,30 @@ public class Users {
 	 * Class Constructor
 	 */
 	
-	public Users(String username, String name, String surname, String dept) {
+	public Users() {
+		Scanner keyboard=new Scanner(System.in);
 		users_counter+=1;
-		//System.out.println("Please give username: \n");
-		this.setUsername(username);
-		//System.out.println("Please give first name: /n");
-		this.setName(name);
-		//System.out.println("Please give surname: /n");
-		this.setSurname(surname);
-		//System.out.println("Please give dept name: /n");
-		this.setDept(dept);
+		System.out.println("Please give username: \n");
+		this.setUsername(keyboard.next());
+		System.out.println("Please give first name: /n");
+		this.setName(keyboard.next());
+		System.out.println("Please give surname: /n");
+		this.setSurname(keyboard.next());
+		System.out.println("Please give dept name: /n");
+		this.setDept(keyboard.next());
+		//keyboard.close();
 		
 	}
 	
+	public Users(String username, String name, String surname, String dept) {
+		setUsername(username);
+		setName(name);
+		setSurname(surname);
+		setDept(dept);
+	}
+	
 	public void printer() {
-		System.out.println("Username: " + username + "\nName: "+ name + "\nSurname: " + surname + "\nDepartment: " + dept + "\n");
+		System.out.println(getUsername() + "\n" + getName() + "\n" + getSurname() + "\n" + getDept() + "\n");
 	}
 
 

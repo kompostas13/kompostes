@@ -4,6 +4,7 @@ public class Courses {
 	
 	private String course_name;
 	private final int course_ID;
+	private String dept_name;
 	private Professors course_prof;
 	public static int counter;
 	
@@ -17,11 +18,12 @@ public class Courses {
 		//Grades.addCourse(this);
 	}
 	
-	public Courses(int cID, String cname, Professors prof) {
+	public Courses(int cID, String cname, String dept) {
 		
 		this.course_ID = cID;
+		setDept_name(dept);
 		setCourse_name(cname);
-		this.course_prof= prof;
+		//this.course_prof= prof;
 		plusCounter();
 	}
 	
@@ -71,6 +73,20 @@ public class Courses {
 	 */
 	public int getCourse_ID() {
 		return course_ID;
+	}
+
+	/**
+	 * @return the dept_name
+	 */
+	public String getDept_name() {
+		return dept_name;
+	}
+
+	/**
+	 * @param dept_name the dept_name to set
+	 */
+	public void setDept_name(String dept_name) {
+		this.dept_name = dept_name;
 	}
 
 }
